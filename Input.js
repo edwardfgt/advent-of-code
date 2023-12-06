@@ -7,23 +7,24 @@ let time = 0;
 let speed = 0;
 
 const calculateWin = (time, distance) => {
-  raceWins = [];
-  let speed = 0;
-  for (let index = 0; index <= time; index++) {
+  let raceWins = 0;
+  for (let index = 0; index < time; index++) {
     let remaining = time - index;
 
     distanceTravelled = remaining * index;
     if (distanceTravelled > distance) {
-      raceWins.push({ charge: index, distanceTravelled: distanceTravelled });
+      raceWins += 1;
     }
   }
 
-  return raceWins.length;
+  return raceWins;
 };
 
-console.log(
-  calculateWin(47, 282) *
-    calculateWin(70, 1079) *
-    calculateWin(75, 1147) *
-    calculateWin(66, 1062)
-);
+// console.log(
+//   calculateWin(47, 282) *
+//     calculateWin(70, 1079) *
+//     calculateWin(75, 1147) *
+//     calculateWin(66, 1062)
+// );
+
+console.log(calculateWin(47707566, 282107911471062));
